@@ -39,6 +39,12 @@
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="contacts.html">Liên hệ</a>
+                </li>
+                <li class="nav-item">
+					<a class="nav-link" href="SignIn.html" id="signIn">Đăng nhập</a>
+                </li>
+                <li class="nav-item">
+					<a class="nav-link active d-none" href="Post.html" id="post">Bài đăng</a>
 				</li>
 			</ul>
 		</div>
@@ -189,5 +195,16 @@
 		</div>
 	</div>
 </footer>
+
+<script>
+    $(document).ready(function(){
+        if (localStorage.getItem('signIn') == 'true') {
+            $('#signIn').hide();
+	        $('#post').removeClass('d-none');
+        }
+
+    });
+
+</script>
 </body>
 </html>	

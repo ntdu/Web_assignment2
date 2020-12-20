@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Liên hệ - SKT-Tech</title>
+	<!-- Import Boostrap css, js, font awesome here -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">       
+    <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <link href="./css/style.css" rel="stylesheet">
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+	<div class="container-fluid">
+		<a class="navbar-branch" href="#">
+			<img src="./img/logo-white.svg" height="50" alt="image">
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" 
+			data-target="#navbarResponsive">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarResponsive">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item">
+					<a class="nav-link " href="index.html">Trang chủ</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="about.html">Giới thiệu</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="service.html">Sản phẩm</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="price.html">Bảng giá</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="contacts.html">Liên hệ</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link active" href="Post.html" id="post">Bài đăng</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="User.html" id="user">Thông tin tài khoản</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
+<!-- Carousel -->
+<div id="slides" class="carousel slide" data-ride="carousel">
+	<ul class="carousel-indicators">
+		<li data-target="#slides" data-slide-to="0" class="active"></li>
+	</ul>
+	<div class="carousel-inner">
+		<div class="carousel-item active">
+            <img src="./img/header-contact_K9Quf7J.png" alt="image">
+		</div>
+	</div>
+</div>
+
+<div class="container" id="content-contacts" style="padding-top: 5rem;">
+    <div id="data" class="card p-5" style="border: none">
+
+		<form class="needs-validation" novalidate>
+            <div class="form-row" >
+              <div class="form-group col-md-12">
+                <label for="inputName">Tiêu đề</label>
+              	<input id="title" type="text" class="form-control" required placeholder="Tiêu đề">
+              </div>
+			</div>
+
+			<div class="form-group">
+                <label for="message">Bài đăng</label>
+                <textarea class="form-control" id="message" rows="3"></textarea>
+			</div>
+			
+			<div style="width: 100%;">
+				<button id="sendPost" type="submit" class="btn btn-primary" style="float: right;">Đăng bài</button>
+			</div>
+			
+		</form>
+	</div>
+	<div id="data" class="card p-5" style="border: none;">
+		<div id="content">
+
+		</div>
+	</div>
+
+    <div class="row mt-5">
+        <div class="col-sm text-center">
+            <h3 class="card-title" style="color: rgb(3, 3, 78); font-weight: bold;">Thông tin liên hệ</h3><br>
+            <p class="card-text text-secondary">Quản lý doanh nghiệp thật dễ dàng. Bạn còn đang băn khoăn?</p>
+            <p class="card-text text-secondary">Hãy để chúng tôi mang giải pháp đến cho bạn.</p>
+        </div>
+    </div>	
+
+    <div class="row mt-5">
+        <div class="col-sm">
+          <div class="card text-center h-100">
+              <div class="card-body">
+                <h5 class="card-title" style="color: rgb(3, 3, 78); font-weight: bold;">SKT - The Smart Key for Transpotation</h5><br>
+                <p class="card-text text-secondary">Landmark 6 - Vinhomes Central Park, 720A Điện Biên Phủ, Phường 22, Quận Bình Thạnh, TP. Hồ Chí Minh</p>
+              </div>
+          </div>
+        </div>
+        <div class="col-sm">
+          <div class="card text-center h-100">
+              <div class="card-body">
+                <h5 class="card-title" style="color: rgb(3, 3, 78); font-weight: bold;">Liên hệ kinh doanh</h5><br>
+                <p class="card-text text-secondary">info@skt-tech.com</p>
+              </div>
+          </div>
+        </div>
+    </div>
+
+
+
+
+<!-- Button trigger modal -->
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal"  tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h5 class="modal-title" id="exampleModalLabel">Sửa bài viết</h5>
+		  <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button> -->
+		</div>
+		<div class="modal-body">
+			<form class="needs-validation" novalidate>
+				<div class="form-row" >
+				  <div class="form-group col-md-12">
+					<label for="inputName">Tiêu đề</label>
+					  <input id="editTitle" type="text" class="form-control" required placeholder="Tiêu đề">
+				  </div>
+				</div>
+	
+				<div class="form-group">
+					<label for="message">Bài đăng</label>
+					<textarea id="editMessage" class="form-control"  rows="3"></textarea>
+				</div>
+				
+				<!-- <div style="width: 200px; margin:auto;">
+					
+					
+				</div> -->
+				
+			</form>
+		</div>
+		<div class="modal-footer" >
+			<button id="updatePost" type="submit" class="btn btn-primary">Sửa bài</button>
+			<button type="button" class="btn btn-secondary" data-dismiss="modal" id="closeModal">Close</button>
+		 
+		</div>
+	  </div>
+	</div>
+  </div>
+
+</div>
+
+<footer>
+	<div class="container-fluid padding mt-5">	
+		<div class="row text-center">
+			<div class="col-md-4">
+				<img class="footer-logo" src="./img/logo-white.svg" alt="image">
+				<hr class="light">
+				<p>info@skt-tech.com</p>
+			</div>
+			<div class="col-md-4">				
+				<hr class="light">
+				<h5>Giờ làm việc</h5>
+				<hr class="light">
+				<p>Thứ hai - Thứ sáu: 8h30 - 17h30</p>
+				<p>Thứ 7: 8h30 - 17h30</p>
+			</div>
+			<div class="col-md-4">				
+				<hr class="light">
+				<h5>Địa chỉ</h5>
+				<hr class="light">
+				<p>Landmark 6 - Vinhomes Central Park, 720A Điện Biên Phủ, Phường 22, Quận Bình Thạnh, TP. Hồ Chí Minh</p>
+			</div>
+			<div class="col-12">
+				<hr class="light-100">
+				<h5>&copy; SKT-Tech</h5>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+	var id = 0;
+	$(document).ready(function(){
+		loadlist();
+
+		$("#sendPost").click(function(e){
+			e.preventDefault();
+			
+			$.ajax({
+				type: 'POST',
+				url: 'API/post.php',
+				dataType: 'json',
+				data: {
+					'user_id': localStorage.getItem('user_id'),
+					'title': document.getElementById("title").value,
+					'message': document.getElementById("message").value
+				},
+				success: function(data) {
+					if (data.code == 200) {
+						swal({
+							title: "Đăng  thành công",
+							icon: "success",
+						});	
+						loadlist();
+						$('#title').val('');
+						$('#message').val('');
+					} else {
+						// $('#existName').removeClass('d-none');
+						// $('#username').focus();
+					}
+					// loadlist();
+					// $('#cars').show();
+				},
+				error: function(e) {
+					alert("Lỗi: " + e.msg);
+					
+				}
+			});
+		});
+
+		$("#updatePost").click(function(e){
+			e.preventDefault();
+			// alert(document.getElementById("editTitle").value);
+			// alert(id);
+			$.ajax({
+				type: 'POST',
+				url: 'API/post.php',
+				dataType: 'json',
+				data: {
+					'id': id,
+					'user_id': localStorage.getItem('user_id'),
+					'title': document.getElementById("editTitle").value,
+					'message': document.getElementById("editMessage").value
+				},
+				success: function(data) {
+					if (data.code == 200) {
+						$("#closeModal").click();
+						swal({
+							title: "Cập nhật thành công",
+							icon: "success",
+						});	
+						loadlist();
+	
+					} else {
+						// $('#existName').removeClass('d-none');
+						// $('#username').focus();
+					}
+					// loadlist();
+					// $('#cars').show();
+				},
+				error: function(e) {
+					alert("Lỗi: " + e.msg);
+					
+				}
+			});
+		});
+	});
+
+
+	function loadlist() {
+		var content=$('#content');
+		content.empty();
+		
+        var receiveObj, txt = '';
+        $.get("API/post.php?user_id=" + localStorage.getItem('user_id'), function(data){
+			
+			receiveObj = JSON.parse(data);   
+			// onCLick="return editPost(${receiveObj[x].id}, ${receiveObj[x].title})">
+			for (x in receiveObj) {
+				var title = receiveObj[x].title;
+				var mes = receiveObj[x].message;
+				content.append(
+				`
+				<div class="card mt-3">
+				<div class="card-header">
+					${receiveObj[x].title}
+				</div>
+				<div class="card-body" style="width: 100%;">
+					
+					<p class="card-text">${receiveObj[x].message}.</p>
+					<button class="btn btn-primary ml-1" onCLick="deletePost(${receiveObj[x].id})" style="float:right";>Xóa</button>
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" 
+					onCLick="editPost(${receiveObj[x].id}, '${title}', '${mes}')" style="float:right";>Sửa</button>
+				</div>
+				</div>
+				
+				`
+			)}	
+		});
+	}
+	
+	function deletePost(id) {
+		$.ajax({
+            type: 'POST',
+            url: 'API/post.php',
+            dataType: 'json',
+            data: {
+                'id': id
+            },
+            success: function(data) {                
+                loadlist();   
+            },
+            error: function(e) {
+                alert("Lỗi: " + e);    
+            }
+        });
+	}
+
+	function editPost(id, title, mes) {
+		this.id = id;
+		$('#editTitle').val(title);
+		$('#editMessage').val(mes);
+	}
+</script>
+</body>
+</html>	

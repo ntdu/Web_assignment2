@@ -38,13 +38,13 @@
 					<a class="nav-link" href="price.html">Bảng giá</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link active" href="contacts.html">Liên hệ</a>
+					<a class="nav-link" href="contacts.html">Liên hệ</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="SignIn.html" id="signIn">Đăng nhập</a>
-                </li>
-                <li class="nav-item">
-					<a class="nav-link active d-none" href="Post.html" id="post">Bài đăng</a>
+					<a class="nav-link" href="Post.html" id="post">Bài đăng</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link active" href="User.html" id="user">Thông tin tài khoản</a>
 				</li>
 			</ul>
 		</div>
@@ -63,37 +63,56 @@
 </div>
 
 <div class="container" id="content-contacts" style="padding-top: 5rem;">
-    <div class="card p-5">
-        <form>
-            <div class="form-row">
-              <div class="form-group col-md-6">
-                <label for="inputName">Tên của bạn*</label>
-              <input type="text" class="form-control" id="inputName" placeholder="Tên của bạn *">
+    <div class="card p-5" style="max-width: 600px; width: 100%; margin: auto;">
+        <form >
+            <div class="form-row" >
+              <div class="form-group col-md-12">
+                <label for="inputName">Tên đăng nhập*</label>
+			  <input id="username" type="text" class="form-control" placeholder="Tên của bạn">
+			  <small id="existName" class="text-danger d-none"> Tên đăng nhập đã tồn tại</small>
               </div>
-              <div class="form-group col-md-6">
-                <label for="inputEmail4">Email*</label>
-                <input type="email" class="form-control" id="inputEmail4" placeholder="Email*">
-              </div>
-            </div>
-    
-            <div class="form-row">
-                <div class="form-group col-md-6">
+			</div>
+			<div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="inputPhone">Mật khẩu*</label>
+                    <input id="password" type="password" class="form-control" placeholder="Mật khẩu">
+                </div>
+			</div>
+			<div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="inputPhone">Nhập lại mật khẩu*</label>
+                    <input id="rePassword" type="password" class="form-control"  placeholder="Nhập lại mật khẩu">
+                </div>
+			</div>
+			<div class="form-row">
+                <div class="form-group col-md-12">
                     <label for="inputPhone">Số điện thoại*</label>
-                    <input type="text" class="form-control" id="inputPhone" placeholder="Số điện thoại *">
+                    <input id="phone" type="text" class="form-control"  placeholder="Số điện thoại">
                 </div>
     
-                <div class="form-group col-md-6">
-                <label for="inputAddress2">Địa chỉ</label>
-                <input type="text" class="form-control" id="inputAddress2" placeholder="Địa chỉ *">
+            </div>
+			<div class="form-row" >
+				<div class="form-group col-md-12">
+				  <label for="inputEmail4">Email*</label>
+				  <input id="email" type="email" class="form-control" placeholder="Email">
+				</div>
+			</div>
+    
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="inputPhone">Địa chỉ*</label>
+                    <input id="address" type="text" class="form-control" placeholder="Địa chỉ">
                 </div>
             </div>
     
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <label for="message">Tin nhắn</label>
                 <textarea class="form-control" id="message" rows="3"></textarea>
-            </div>
-    
-            <button type="submit" class="btn btn-primary">Dùng thử ngay</button>
+            </div> -->
+			<div style="width: 100px; margin:auto;">
+				<button id="update" type="submit" class="btn btn-primary">Cập nhật</button>
+			</div>
+            
         </form>
     </div>
 
@@ -153,15 +172,64 @@
 		</div>
 	</div>
 </footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script>
-    $(document).ready(function(){
-        if (localStorage.getItem('signIn') == 'true') {
-            $('#signIn').hide();
-	        $('#post').removeClass('d-none');
-        }
+	$(document).ready(function(){
 
-    });
+		loadlist()
+		$("#update").click(function(e){
+			e.preventDefault();
+			
+			$.ajax({
+				type: 'POST',
+				url: 'API/user.php',
+				dataType: 'json',
+				data: {
+					'id': localStorage.getItem('user_id'),
+					'username': document.getElementById("username").value,
+					'rePassword': document.getElementById("password").value,
+					'phone': document.getElementById("phone").value,
+					'email': document.getElementById("email").value,
+					'address': document.getElementById("address").value
+				},
+				success: function(data) {
+					if (data.code == 200) {
+						swal({
+							title: "Cập nhật thành công",
+							// text: "You clicked the button!",
+							icon: "success",
+						});			
+					} else {
+						// $('#existName').removeClass('d-none');
+						// $('#username').focus();
+					}
+					// loadlist();
+					// $('#cars').show();
+				},
+				error: function(e) {
+					alert("Lỗi: " + e.msg);
+					
+				}
+			});
+		});
+	});
 
+
+	function loadlist() {
+		
+        var receiveObj, txt = '';
+        $.get("API/user.php?id=" + localStorage.getItem('user_id'), function(data){		
+			receiveObj = JSON.parse(data);
+			$('#username').val(receiveObj[0].username);
+			$('#password').val(receiveObj[0].password);
+			$('#rePassword').val(receiveObj[0].password);
+			$('#phone').val(receiveObj[0].phone);
+			$('#email').val(receiveObj[0].email);
+			$('#address').val(receiveObj[0].address);	
+		});
+	}
 </script>
 </body>
 </html>	

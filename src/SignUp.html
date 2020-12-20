@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Liên hệ - SKT-Tech</title>
+	<!-- Import Boostrap css, js, font awesome here -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">       
+    <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <link href="./css/style.css" rel="stylesheet">
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+	<div class="container-fluid">
+		<a class="navbar-branch" href="#">
+			<img src="./img/logo-white.svg" height="50" alt="image">
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" 
+			data-target="#navbarResponsive">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarResponsive">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item">
+					<a class="nav-link " href="index.html">Trang chủ</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="about.html">Giới thiệu</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="service.html">Sản phẩm</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="price.html">Bảng giá</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="contacts.html">Liên hệ</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link active" href="SignIn.html">Đăng nhập</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
+<!-- Carousel -->
+<div id="slides" class="carousel slide" data-ride="carousel">
+	<ul class="carousel-indicators">
+		<li data-target="#slides" data-slide-to="0" class="active"></li>
+	</ul>
+	<div class="carousel-inner">
+		<div class="carousel-item active">
+            <img src="./img/header-contact_K9Quf7J.png" alt="image">
+		</div>
+	</div>
+</div>
+
+<div class="container" id="content-contacts" style="padding-top: 5rem;">
+    <div class="card p-5" style="max-width: 600px; width: 100%; margin: auto;">
+        <form name="myForm">
+            <div class="form-row" >
+              <div class="form-group col-md-12">
+                <label for="inputName">Tên đăng nhập*</label>
+			  <input id="username" name="username" type="text" class="form-control" placeholder="Tên của bạn">
+			  <small id="existName" class="text-danger d-none"> Tên đăng nhập đã tồn tại</small>
+              </div>
+			</div>
+			<div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="inputPhone">Mật khẩu*</label>
+                    <input id="password" name="password" type="password" class="form-control" placeholder="Mật khẩu">
+                </div>
+			</div>
+			<div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="inputPhone">Nhập lại mật khẩu*</label>
+                    <input id="rePassword" name="rePassword" type="password" class="form-control"  placeholder="Nhập lại mật khẩu">
+                </div>
+			</div>
+			<div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="inputPhone">Số điện thoại*</label>
+                    <input id="phone" name="phone" type="text" class="form-control"  placeholder="Số điện thoại">
+                </div>
+    
+            </div>
+			<div class="form-row" >
+				<div class="form-group col-md-12">
+				  <label for="inputEmail4">Email*</label>
+				  <input id="email" name="email" type="email" class="form-control" placeholder="Email">
+				</div>
+			</div>
+    
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="inputPhone">Địa chỉ</label>
+                    <input id="address" name="address" type="text" class="form-control" placeholder="Địa chỉ">
+                </div>
+            </div>
+    
+            <!-- <div class="form-group">
+                <label for="message">Tin nhắn</label>
+                <textarea class="form-control" id="message" rows="3"></textarea>
+            </div> -->
+			<div style="width: 100px; margin:auto;">
+				<!-- <button id="create" type="submit" class="btn btn-primary">Đăng ký</button> -->
+				<button id="create" type="submit" class="btn btn-primary">Đăng ký</button>
+
+			</div>
+            
+        </form>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-sm text-center">
+            <h3 class="card-title" style="color: rgb(3, 3, 78); font-weight: bold;">Thông tin liên hệ</h3><br>
+            <p class="card-text text-secondary">Quản lý doanh nghiệp thật dễ dàng. Bạn còn đang băn khoăn?</p>
+            <p class="card-text text-secondary">Hãy để chúng tôi mang giải pháp đến cho bạn.</p>
+        </div>
+    </div>	
+
+    <div class="row mt-5">
+        <div class="col-sm">
+          <div class="card text-center h-100">
+              <div class="card-body">
+                <h5 class="card-title" style="color: rgb(3, 3, 78); font-weight: bold;">SKT - The Smart Key for Transpotation</h5><br>
+                <p class="card-text text-secondary">Landmark 6 - Vinhomes Central Park, 720A Điện Biên Phủ, Phường 22, Quận Bình Thạnh, TP. Hồ Chí Minh</p>
+              </div>
+          </div>
+        </div>
+        <div class="col-sm">
+          <div class="card text-center h-100">
+              <div class="card-body">
+                <h5 class="card-title" style="color: rgb(3, 3, 78); font-weight: bold;">Liên hệ kinh doanh</h5><br>
+                <p class="card-text text-secondary">info@skt-tech.com</p>
+              </div>
+          </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+	<div class="container-fluid padding mt-5">	
+		<div class="row text-center">
+			<div class="col-md-4">
+				<img class="footer-logo" src="./img/logo-white.svg" alt="image">
+				<hr class="light">
+				<p>info@skt-tech.com</p>
+			</div>
+			<div class="col-md-4">				
+				<hr class="light">
+				<h5>Giờ làm việc</h5>
+				<hr class="light">
+				<p>Thứ hai - Thứ sáu: 8h30 - 17h30</p>
+				<p>Thứ 7: 8h30 - 17h30</p>
+			</div>
+			<div class="col-md-4">				
+				<hr class="light">
+				<h5>Địa chỉ</h5>
+				<hr class="light">
+				<p>Landmark 6 - Vinhomes Central Park, 720A Điện Biên Phủ, Phường 22, Quận Bình Thạnh, TP. Hồ Chí Minh</p>
+			</div>
+			<div class="col-12">
+				<hr class="light-100">
+				<h5>&copy; SKT-Tech</h5>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$("#create").click(function(e){
+			// alert("create");
+			e.preventDefault();
+			if (validateForm() == true) {
+				$.ajax({
+				type: 'POST',
+				url: 'API/login.php',
+				dataType: 'json',
+				data: {
+					'username': document.getElementById("username").value,
+					'rePassword': document.getElementById("password").value,
+					'phone': document.getElementById("phone").value,
+					'email': document.getElementById("email").value,
+					'address': document.getElementById("address").value
+				},
+				success: function(data) {
+					if (data.code == 200) {
+						swal({
+							title: "Đăng ký thành công",
+							// text: "You clicked the button!",
+							icon: "success",
+						});			
+					} else if (data.code == 201) {
+						swal({
+							title: data.msg,
+							// text: "You clicked the button!",
+							icon: "error",
+						});	
+					} else {
+						alert(data);
+						$('#existName').removeClass('d-none');
+						$('#username').focus();
+					}
+					// loadlist();
+					// $('#cars').show();
+				},
+				error: function(e) {
+					alert("Lỗi: " + e);
+					
+				}
+			});
+			}
+		});
+	});
+
+	function validateForm() {
+			return true;
+
+			// alert("validation");
+			var username = document.forms["myForm"]["username"].value;
+			// alert(fname.length);
+            var lname = document.forms["myForm"]["username"].value;
+            var email = document.forms["myForm"]["email"].value;
+			var pwd = document.forms["myForm"]["password"].value;
+			var rePwd = document.forms["myForm"]["rePassword"].value;
+			var phone = document.forms["myForm"]["phone"].value;
+			var address = document.forms["myForm"]["address"].value;
+			
+            if (username.length < 2 || username.length > 30) {
+				alert("Tên phải có độ dài từ 2 đến 30 kí tự!");
+				$('#username').focus();
+                return false;
+			}
+			
+            if (pwd.length < 2 || pwd.length > 30) {
+                alert("Mật khẩu phải có độ dài từ 2 đến 30 kí tự!");
+                $('#password').focus();
+                return false;
+			}
+			
+			if (rePwd != pwd) {
+				alert("Mật khẩu không khớp!");		
+                $('#rePassword').focus();
+                return false;
+			}
+
+			if (phone.length < 10 || pwd.length > 11) {
+                alert("Số điện thoại không xác định!");
+                $('#phone').focus();
+                return false;
+			}
+
+            var mailformat = "[a-zA-Z0-9_\\.\\+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-\\.]+";
+            if(!email.match(mailformat))
+            {
+				alert("Địa chỉ email không xác định!");
+				$('#email').focus();
+                return false;
+            }
+            // alert("Complete!");
+            return true;
+        }  
+        function reset() {
+            document.getElementById("myForm").reset();
+        }
+
+</script>
+</body>
+</html>	
